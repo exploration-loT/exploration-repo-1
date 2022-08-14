@@ -1,12 +1,22 @@
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [isShown, setIsShown] = useState(0);
+
+  function showHandler() {
+    setIsShown = 1;
+  }
+
+  function hideHandler() {
+    setIsShown = 0;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Testing Project
-        </p>
+        {isShown && <div>Someting to Show....</div>}
+        <p onClick={showHandler}>Testing Project</p>
         <a
           className="App-link"
           href="https://reactjs.org"
